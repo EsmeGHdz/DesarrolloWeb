@@ -1,0 +1,59 @@
+/* Estilo del logo en la barra de navegación */
+.logo {
+    max-width: 100px;
+}
+
+/* Cambiar el color de fondo de la barra de navegación */
+.navbar {
+    background-color: #CCEBD0 !important;
+}
+
+/* Estilo del pie de página */
+footer {
+    background-color: #CCEBD0; /* Cambia el color de fondo aquí */
+    color: #FC8FA7; /* Cambia el color del texto aquí, si lo deseas */
+}
+
+
+/* Cambiar el color del texto de la barra de navegación a #FC8FA7 y ponerlo en negritas */
+.navbar .nav-link, .navbar .navbar-brand {
+    color: #FC8FA7 !important;
+    font-weight: bold;
+}
+
+/* Cambiar el color del texto de los botones a #FC8FA7 */
+.navbar .btn-outline-light {
+    color: #FC8FA7 !important;
+    border-color: #FC8FA7 !important;
+}
+
+/* Espaciado entre las categorías y los elementos de la lista */
+.list-group-item {
+    margin-bottom: 10px;
+}
+
+/* Estilo de la tarjeta de los libros */
+.card {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo del banner de descuentos */
+.alert {
+    font-size: 1.2rem;
+}
+
+/* Espaciado entre las tarjetas de libros */
+.col-md-4 {
+    margin-bottom: 30px;
+}
+
+/* Estilo del pie de página */
+footer {
+    background-color: #343a40;
+    color: white;
+}
+/* Estilo del logo en la barra de navegación */
+.logo {
+    max-width: 100px;
+    margin-left: 90px; /* Agregar margen a la izquierda */
+}
