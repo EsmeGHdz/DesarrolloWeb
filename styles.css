@@ -57,3 +57,25 @@ footer {
     max-width: 100px;
     margin-left: 90px; /* Agregar margen a la izquierda */
 }
+/* Asegura que el body y html ocupen todo el alto de la pantalla */
+html, body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+/* El contenedor principal ocupará todo el espacio restante */
+.container {
+    flex: 1; /* Esto hará que el contenedor crezca para ocupar el espacio */
+}
+
+/* Estilos para el footer */
+footer {
+    background-color: #CCEBD0;
+    text-align: center;
+    padding: 10px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
