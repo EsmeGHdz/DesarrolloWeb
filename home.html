@@ -22,8 +22,9 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <!-- Campo de búsqueda modificado -->
                 <form class="d-flex ms-auto" role="search">
-                    <input class="form-control me-2" type="search" placeholder="Buscar libros..." aria-label="Search">
+                    <input id="search" class="form-control me-2" type="search" placeholder="Buscar libros..." aria-label="Search">
                     <button class="btn btn-outline-light" type="submit">Buscar</button>
                 </form>
                 <ul class="navbar-nav ms-auto">
@@ -31,6 +32,8 @@
                     <li class="nav-item"><a class="nav-link" href="#">❤</a></li>
                     <li class="nav-item"><a class="nav-link" href="#">🔔</a></li>
                     <li class="nav-item"><a class="nav-link" href="#">👤</a></li>
+                    <!-- Botón para cambiar de tema -->
+                    <button id="theme-toggle" class="btn btn-dark">&#127763;</button>
                 </ul>
             </div>
         </div>
@@ -60,6 +63,10 @@
 
             <!-- Columna de contenido principal (3/4 del ancho de la pantalla) -->
             <div class="col-md-9">
+                <!-- Contenedor de sugerencias -->
+                <div id="suggestions-container" class="container mt-3">
+                    <ul id="suggestions" class="list-group"></ul>
+                </div>
                 <!-- Banner de descuentos -->
                 <div class="alert alert-warning text-center" role="alert">
                     ¡Descuentos hasta el 50% en títulos seleccionados!
@@ -70,148 +77,211 @@
                 <div class="row">
                     <!-- Libro 1 -->
                     <div class="col-md-4 mb-4">
-                        <div class="card">
-                            <img src="img/roses-and-champagne.jpg" class="card-img-top" alt="Libro 1">
-                            <div class="card-body">
-                                <h5 class="card-title">Rosas y Champaña</h5>
-                                <p class="card-title">ZIG</p>
-                                <div class="rating">
-                                    <span class="star">★</span>
-                                    <span class="star">★</span>
-                                    <span class="star">★</span>
-                                    <span class="star">★</span>
-                                    <span class="star">★</span>   
+                        <div class="card featured">
+                            <div class="card">
+                                <img src="img/roses-and-champagne.jpg" class="card-img-top" alt="Libro 1">
+                                <div class="card-body">
+                                    <h5 class="card-title">Rosas y Champaña</h5>
+                                    <p class="card-title">ZIG</p>
+                                    <div class="rating">
+                                        <span class="star">★</span>
+                                        <span class="star">★</span>
+                                        <span class="star">★</span>
+                                        <span class="star">★</span>
+                                        <span class="star">★</span>   
+                                    </div>
+                                    <p class="card-text"><span class="text-muted text-decoration-line-through">$1216</span> <span class="text-danger">$669</span></p>
+                                    <p class="badge bg-danger">45% Descuento</p>
                                 </div>
-                                <p class="card-text"><span class="text-muted text-decoration-line-through">$1216</span> <span class="text-danger">$669</span></p>
-                                <p class="badge bg-danger">45% Descuento</p>
+                                <a href="#" class="btn btn-success">Comprar</a>
                             </div>
-                            <a href="#" class="btn btn-success">Comprar</a>
                         </div>
                     </div>
 
                     <!-- Libro 2 -->
                     <div class="col-md-4 mb-4">
-                        <div class="card">
-                            <img src="img/hyperventilation.jpg" class="card-img-top" alt="Libro 2">
-                            <div class="card-body">
-                                <h5 class="card-title">Hyperventilation</h5>
-                                <h6 class="card-title">Bboungbbangkkyu</h6>
-                                <div class="rating">
-                                    <span class="star">★</span>
-                                    <span class="star">★</span>
-                                    <span class="star">★</span>
-                                    <span class="star">★</span>
-                                    <span class="star">★</span>   
+                        <div class="card featured">
+                            <div class="card">
+                                <img src="img/hyperventilation.jpg" class="card-img-top" alt="Libro 2">
+                                <div class="card-body">
+                                    <h5 class="card-title">Hyperventilation</h5>
+                                    <h6 class="card-title">Bboungbbangkkyu</h6>
+                                    <div class="rating">
+                                        <span class="star">★</span>
+                                        <span class="star">★</span>
+                                        <span class="star">★</span>
+                                        <span class="star">★</span>
+                                        <span class="star">★</span>   
+                                    </div>
+                                    <p class="card-text"><span class="text-muted text-decoration-line-through">$1216</span> <span class="text-danger">$669</span></p>
+                                    <p class="badge bg-danger">45% Descuento</p>
                                 </div>
-                                <p class="card-text"><span class="text-muted text-decoration-line-through">$1216</span> <span class="text-danger">$669</span></p>
-                                <p class="badge bg-danger">45% Descuento</p>
+                                <a href="#" class="btn btn-success">Comprar</a>
                             </div>
-                            <a href="#" class="btn btn-success">Comprar</a>
                         </div>
                     </div>
 
                     <!-- Libro 3 -->
                     <div class="col-md-4 mb-4">
-                        <div class="card">
-                            <img src="img/semantic-error.jpg" class="card-img-top" alt="Libro 3">
-                            <div class="card-body">
-                                <h5 class="card-title">Semantic Error</h5>
-                                <h6 class="card-title">J.Soori </h6>
-                                <div class="rating">
-                                    <span class="star">★</span>
-                                    <span class="star">★</span>
-                                    <span class="star">★</span>
-                                    <span class="star">★</span>
-                                    <span class="star">★</span>   
+                        <div class="card featured">
+                            <div class="card">
+                                <img src="img/semantic-error.jpg" class="card-img-top" alt="Libro 3">
+                                <div class="card-body">
+                                    <h5 class="card-title">Semantic Error</h5>
+                                    <h6 class="card-title">J.Soori </h6>
+                                    <div class="rating">
+                                        <span class="star">★</span>
+                                        <span class="star">★</span>
+                                        <span class="star">★</span>
+                                        <span class="star">★</span>
+                                        <span class="star">★</span>   
+                                    </div>
+                                    <p class="card-text"><span class="text-muted text-decoration-line-through">$1216</span> <span class="text-danger">$669</span></p>
+                                    <p class="badge bg-danger">45% Descuento</p>
                                 </div>
-                                <p class="card-text"><span class="text-muted text-decoration-line-through">$1216</span> <span class="text-danger">$669</span></p>
-                                <p class="badge bg-danger">45% Descuento</p>
+                                <a href="#" class="btn btn-success">Comprar</a>
                             </div>
-                            <a href="#" class="btn btn-success">Comprar</a>
                         </div>
                     </div>
 
                     <!-- Libro 4 -->
                     <div class="col-md-4 mb-4">
-                        <div class="card">
-                            <img src="img/lick-me-up-1.jpg" class="card-img-top" alt="Libro 4">
-                            <div class="card-body">
-                                <h5 class="card-title">Lick me up if you can - Vol 1</h5>
-                                <h6 class="card-title">ZIG</h6>
-                                <div class="rating">
-                                    <span class="star">★</span>
-                                    <span class="star">★</span>
-                                    <span class="star">★</span>
-                                    <span class="star">★</span>
-                                    <span class="star">★</span>   
+                        <div class="card featured">
+                            <div class="card">
+                                <img src="img/lick-me-up-1.jpg" class="card-img-top" alt="Libro 4">
+                                <div class="card-body">
+                                    <h5 class="card-title">Lick me up if you can - Vol 1</h5>
+                                    <h6 class="card-title">ZIG</h6>
+                                    <div class="rating">
+                                        <span class="star">★</span>
+                                        <span class="star">★</span>
+                                        <span class="star">★</span>
+                                        <span class="star">★</span>
+                                        <span class="star">★</span>   
+                                    </div>
+                                    <p class="card-text"><span class="text-muted text-decoration-line-through">$1216</span> <span class="text-danger">$669</span></p>
+                                    <p class="badge bg-danger">45% Descuento</p>
                                 </div>
-                                <p class="card-text"><span class="text-muted text-decoration-line-through">$1216</span> <span class="text-danger">$669</span></p>
-                                <p class="badge bg-danger">45% Descuento</p>
+                                <a href="#" class="btn btn-success">Comprar</a>
                             </div>
-                            <a href="#" class="btn btn-success">Comprar</a>
                         </div>
                     </div>
 
                     <!-- Libro 5 -->
                     <div class="col-md-4 mb-4">
-                        <div class="card">
-                            <img src="img/lick-me-up-2.png" class="card-img-top" alt="Libro 5">
-                            <div class="card-body">
-                                <h5 class="card-title">Lick me up if you can - Vol 2</h5>
-                                <h6 class="card-title">ZIG</h6>
-                                <div class="rating">
-                                    <span class="star">★</span>
-                                    <span class="star">★</span>
-                                    <span class="star">★</span>
-                                    <span class="star">★</span>
-                                    <span class="star">★</span>   
+                        <div class="card featured">
+                            <div class="card">
+                                <img src="img/lick-me-up-2.png" class="card-img-top" alt="Libro 5">
+                                <div class="card-body">
+                                    <h5 class="card-title">Lick me up if you can - Vol 2</h5>
+                                    <h6 class="card-title">ZIG</h6>
+                                    <div class="rating">
+                                        <span class="star">★</span>
+                                        <span class="star">★</span>
+                                        <span class="star">★</span>
+                                        <span class="star">★</span>
+                                        <span class="star">★</span>   
+                                    </div>
+                                    <p class="card-text"><span class="text-muted text-decoration-line-through">$1216</span> <span class="text-danger">$669</span></p>
+                                    <p class="badge bg-danger">45% Descuento</p>
                                 </div>
-                                <p class="card-text"><span class="text-muted text-decoration-line-through">$1216</span> <span class="text-danger">$669</span></p>
-                                <p class="badge bg-danger">45% Descuento</p>
+                                <a href="#" class="btn btn-success">Comprar</a>
                             </div>
-                            <a href="#" class="btn btn-success">Comprar</a>
                         </div>
                     </div>
 
                     <!-- Libro 6 -->
                     <div class="col-md-4 mb-4">
-                        <div class="card">
-                            <img src="img/kiss-me-if-you-can.jpg" class="card-img-top" alt="Libro 5">
-                            <div class="card-body">
-                                <h5 class="card-title">Kiss me if you can</h5>
-                                <h6 class="card-title">ZIG</h6>
-                                <div class="rating">
-                                    <span class="star">★</span>
-                                    <span class="star">★</span>
-                                    <span class="star">★</span>
-                                    <span class="star">★</span>
-                                    <span class="star">★</span>   
+                        <div class="card featured">
+                            <div class="card">
+                                <img src="img/kiss-me-if-you-can.jpg" class="card-img-top" alt="Libro 6">
+                                <div class="card-body">
+                                    <h5 class="card-title">Kiss me if you can</h5>
+                                    <h6 class="card-title">ZIG</h6>
+                                    <div class="rating">
+                                        <span class="star">★</span>
+                                        <span class="star">★</span>
+                                        <span class="star">★</span>
+                                        <span class="star">★</span>
+                                        <span class="star">★</span>   
+                                    </div>
+                                    <p class="card-text"><span class="text-muted text-decoration-line-through">$1216</span> <span class="text-danger">$669</span></p>
+                                    <p class="badge bg-danger">45% Descuento</p>
                                 </div>
-                                <p class="card-text"><span class="text-muted text-decoration-line-through">$1216</span> <span class="text-danger">$669</span></p>
-                                <p class="badge bg-danger">45% Descuento</p>
+                                <a href="#" class="btn btn-success">Comprar</a>
                             </div>
-                            <a href="#" class="btn btn-success">Comprar</a>
                         </div>
                     </div>
+
                     <!-- Libro 7 -->
                     <div class="col-md-4 mb-4">
-                        <div class="card">
-                            <img src="img/roses-and-champagne.jpg" class="card-img-top" alt="Libro 5">
-                            <div class="card-body">
-                                <h5 class="card-title">Kiss me if you can</h5>
-                                <p class="card-title">ZIG</p>
-                                <div class="rating">
-                                    <span class="star">★</span>
-                                    <span class="star">★</span>
-                                    <span class="star">★</span>
-                                    <span class="star">★</span>
-                                    <span class="star">★</span>   
+                        <div class="card featured">
+                            <div class="card">
+                                <img src="img/The-Guild-Member-Next-Door.jpg" class="card-img-top" alt="Libro 7">
+                                <div class="card-body">
+                                    <h5 class="card-title">The Guild Member Next Door</h5>
+                                    <p class="card-title">HoneyTrap</p>
+                                    <div class="rating">
+                                        <span class="star">★</span>
+                                        <span class="star">★</span>
+                                        <span class="star">★</span>
+                                        <span class="star">★</span>
+                                        <span class="star">★</span>   
+                                    </div>
+                                    <p class="card-text"><span class="text-muted text-decoration-line-through">$1216</span> <span class="text-danger">$669</span></p>
+                                    <p class="badge bg-danger">45% Descuento</p>
+                                    
                                 </div>
-                                <p class="card-text"><span class="text-muted text-decoration-line-through">$1216</span> <span class="text-danger">$669</span></p>
-                                <p class="badge bg-danger">45% Descuento</p>
-                                
+                                <a href="#" class="btn btn-success">Comprar</a>
                             </div>
-                            <a href="#" class="btn btn-success">Comprar</a>
+                        </div>
+                    </div>
+
+                    <!-- Libro 8 -->
+                    <div class="col-md-4 mb-4">
+                        <div class="card featured">
+                            <div class="card">
+                                <img src="img/The-Northern-Grand-Dukes-Hamster.jpg" class="card-img-top" alt="Libro 8">
+                                <div class="card-body">
+                                    <h5 class="card-title">The Northern Grand Duke’s Hamster</h5>
+                                    <p class="card-title">PLUTOLEA</p>
+                                    <div class="rating">
+                                        <span class="star">★</span>
+                                        <span class="star">★</span>
+                                        <span class="star">★</span>
+                                        <span class="star">★</span>
+                                        <span class="star">★</span>   
+                                    </div>
+                                    <p class="card-text"><span class="text-muted text-decoration-line-through">$1216</span> <span class="text-danger">$669</span></p>
+                                    <p class="badge bg-danger">45% Descuento</p>
+                                    
+                                </div>
+                                <a href="#" class="btn btn-success">Comprar</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Libro 9 -->
+                    <div class="col-md-4 mb-4">
+                        <div class="card featured">
+                            <div class="card">
+                                <img src="img/The-Origin-of-Species.jpg" class="card-img-top" alt="Libro 9">
+                                <div class="card-body">
+                                    <h5 class="card-title">El Origen de las Especies</h5>
+                                    <p class="card-title">Harusari</p>
+                                    <div class="rating">
+                                        <span class="star">★</span>
+                                        <span class="star">★</span>
+                                        <span class="star">★</span>
+                                        <span class="star">★</span>
+                                        <span class="star">★</span>   
+                                    </div>
+                                    <p class="card-text"><span class="text-muted text-decoration-line-through">$1216</span> <span class="text-danger">$669</span></p>
+                                    <p class="badge bg-danger">45% Descuento</p>
+                                    
+                                </div>
+                                <a href="#" class="btn btn-success">Comprar</a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -226,5 +296,72 @@
     <script src="carrito.js"></script>
     <!-- Agregar el CDN de Bootstrap JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Lista de sugerencias de libros
+        const books = [
+            'Rosas y Champaña', 
+            'Hyperventilation', 
+            'Semantic Error', 
+            'Lick me up if you can', 
+            'The Guild Member Next Door',
+            'The Northern Grand Duke’s Hamster',
+            'El Origen de las Especies',
+            'Kiss me if you can'];
+        // Función para mostrar sugerencias dinámicamente
+        document.getElementById('search').addEventListener('input', function() {
+            const input = this.value.toLowerCase();
+            const suggestionsList = document.getElementById('suggestions');
+            suggestionsList.innerHTML = '';  // Limpiar sugerencias previas
+            if (input) {
+                books.filter(book => book.toLowerCase().includes(input)).forEach(book => {
+                    const suggestion = document.createElement('li');
+                    suggestion.textContent = book;
+                    suggestion.classList.add('list-group-item');
+                    suggestionsList.appendChild(suggestion);
+                });
+            }
+        });
+    </script>
+    <script>
+        const button = document.getElementById('theme-toggle');
+        button.addEventListener('click', () => {
+            document.body.classList.toggle('light-theme');
+            if (document.body.classList.contains('light-theme')) {
+                button.textContent = '🌕';
+                button.classList.replace('btn-dark', 'btn-light');
+            } else {
+                button.textContent = '🌑';
+                button.classList.replace('btn-light', 'btn-dark');
+            }
+        });
+        // Agregar estilo para el tema claro
+        const style = document.createElement('style');
+        style.textContent = `
+            .light-theme {
+                background-color: #e0e0e0;
+                color: #000;
+            }
+            .light-theme nav {
+                background-color: #5c5e61 !important;
+            }
+            .light-theme footer {
+                background-color: #5c5e61 !important;
+            }
+        `;
+        document.head.append(style);
+    </script>
+    <script>
+        // Aplicar animación en hover para los libros destacados
+        const featuredBooks = document.querySelectorAll('.featured');
+        featuredBooks.forEach(book => {
+            book.addEventListener('mouseover', () => {
+                book.style.transform = 'scale(1.02)';
+                book.style.transition = 'transform 0.2s';
+            });
+            book.addEventListener('mouseout', () => {
+                book.style.transform = 'scale(1)';
+            });
+        });
+    </script>
 </body>
 </html>
