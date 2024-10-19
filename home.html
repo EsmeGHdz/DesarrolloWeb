@@ -363,5 +363,27 @@
             });
         });
     </script>
+    <!-- Eventos Personalizados -->
+    <script>
+        // Función para emitir un evento cuando el usuario pasa sobre un libro con descuento
+        const discountBooks = document.querySelectorAll('.badge.bg-danger');
+        discountBooks.forEach(discount => {
+            discount.addEventListener('mouseover', function() {
+                const bookTitle = this.closest('.card-body').querySelector('.card-title').textContent;
+                const discountEvent = new CustomEvent('showDiscountAlert', { detail: { book: bookTitle } });
+                document.dispatchEvent(discountEvent);
+            });
+        });
+        // Listener para el evento personalizado 'showDiscountAlert'
+        document.addEventListener('showDiscountAlert', function(event) {
+            alert(`¡"${event.detail.book}" tiene un descuento especial!`);
+        });
+    </script>
+    <script>
+        
+    </script>
+    <script>
+
+    </script>
 </body>
 </html>

@@ -43,9 +43,12 @@ function modificarCantidad(index, cambio) {
     actualizarCarrito();
 }
 
-// Función para eliminar un libro del carrito
+//                                   Función para eliminar un libro del carrito
 function eliminarLibro(index) {
     const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+    
+    // Guardar el libro eliminado en una variable antes de eliminarlo
+    const libroEliminado = carrito[index]; 
 
     // Eliminar el libro seleccionado
     carrito.splice(index, 1);
@@ -53,9 +56,21 @@ function eliminarLibro(index) {
     // Guardar el carrito actualizado
     localStorage.setItem('carrito', JSON.stringify(carrito));
 
+    // Emitir el evento personalizado 'libroEliminado' con la información del libro eliminado
+    const eventoLibroEliminado = new CustomEvent('libroEliminado', { detail: { libro: libroEliminado } });
+    document.dispatchEvent(eventoLibroEliminado);
+
     // Actualizar la vista
     actualizarCarrito();
 }
+
+document.addEventListener('libroEliminado', function(event) {
+    alert(`El libro "${event.detail.libro.titulo}" ha sido eliminado del carrito.`);
+});
+
+
+
+
 
 // Función para actualizar la tabla del carrito y los totales
 function actualizarCarrito() {
