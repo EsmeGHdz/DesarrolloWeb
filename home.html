@@ -29,6 +29,7 @@
                     <button class="btn btn-outline-light" type="submit">Buscar</button>
                 </form>
                 <ul class="navbar-nav ms-auto">
+                    
                     <li class="nav-item"><a class="nav-link" href="#">🛒</a></li>
                     <li class="nav-item"><a class="nav-link" href="#">❤</a></li>
                     <li class="nav-item"><a class="nav-link" href="#">🔔</a></li>
@@ -69,6 +70,9 @@
                     <ul id="suggestions" class="list-group"></ul>
                 </div>
                 <!-- Banner de descuentos -->
+                <div class="container mt-4" id="admin-section" style="display: none;">
+                    <a href="datatable.html" class="btn btn-danger">Acceso Admin</a>
+                </div>
                 <div class="alert alert-warning text-center" role="alert">
                     ¡Descuentos hasta el 50% en títulos seleccionados!
                 </div>
@@ -381,10 +385,13 @@
         });
     </script>
     <script>
-        
-    </script>
-    <script>
+        // Recuperar el rol del usuario del almacenamiento local
+        const userRole = localStorage.getItem('userRole');
 
+        // Mostrar el botón de acceso si el rol es "admin"
+        if (userRole === 'admin') {
+            document.getElementById('admin-section').style.display = 'block';
+        }
     </script>
 </body>
 </html>
